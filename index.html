@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <style>
+        body {
+          background-image: url('css/IMG/b.jpeg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 100vh;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    </style>
+</head>
+<body>
+   <header>
+       <div class="header-content">
+           <img src="css/IMG/klipartz.com.png" alt="Logo" class="logo"> <!-- Añadir el logo aquí -->
+           <h1>TRIPPLAN</h1>
+       </div>
+   </header>
+
+   <div class="form-container">
+       <form action="validar.php" method="post">
+           <h1>Inicio</h1>
+           <p>
+               Nombre de usuario 
+               <input type="text" placeholder="Ingrese su nombre" name="usuario" required>
+           </p>
+           <p>
+               Contraseña 
+               <input type="password" placeholder="Ingrese su contraseña" name="contraseña" required>
+           </p>
+           <input type="submit" value="Ingresar">
+       </form>
+   </div>
+</body>
+</html>
