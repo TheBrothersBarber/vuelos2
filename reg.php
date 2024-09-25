@@ -1,7 +1,7 @@
 <?php
 include("ver conex.php");
 
-$sql = "SELECT Id, Nombre, Usuario, Contraseña, Id_cargo FROM usuarios";
+$sql = "SELECT Id, Nombre, Usuario, Contrasena, Id_cargo FROM usuarios";
 $result = $conexion->query($sql);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,10 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $Id = $_POST["Id"];
         $Nombre = $_POST["Nombre"];
         $usuario = $_POST["Usuario"];
-        $contraseña = $_POST["Contraseña"];
+        $contrasena = $_POST["Contrasena"];
         $Id_cargo = $_POST["Id_cargo"];
 
-        $update_sql = "UPDATE usuarios SET Id_cargo='$Id_cargo', Nombre='$Nombre', Usuario='$usuario', Contraseña='$contraseña' WHERE Id='$Id'";
+        $update_sql = "UPDATE usuarios SET Id_cargo='$Id_cargo', Nombre='$Nombre', Usuario='$usuario', Contrasena='$contrasena' WHERE Id='$Id'";
 
         if ($conexion->query($update_sql) === TRUE) {
             echo "Registro actualizado correctamente";
@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $Id = $_POST["Id"];
         $Nombre = $_POST["Nombre"];
         $usuario = $_POST["Usuario"];
-        $contraseña = $_POST["Contraseña"];
+        $contrasena = $_POST["Contrasena"];
         $Id_cargo = $_POST["Id_cargo"];
 
-        $insert_sql = "INSERT INTO usuarios (Id, Nombre, Usuario, Contraseña, Id_cargo) VALUES ('$Id', '$Nombre', '$usuario', '$contraseña', '$Id_cargo')";
+        $insert_sql = "INSERT INTO usuarios (Id, Nombre, Usuario, Contrasena, Id_cargo) VALUES ('$Id', '$Nombre', '$usuario', '$contrasena', '$Id_cargo')";
 
         if ($conexion->query($insert_sql) === TRUE) {
             echo "Nuevo usuario agregado correctamente";
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 Id: <input type="text" name="Id" required><br><br>
                 Nombre: <input type="text" name="Nombre" required><br><br>
                 Nombre de usuario: <input type="text" name="Usuario" required><br><br>
-                Contraseña: <input type="password" name="Contraseña" required><br><br>
+                Contraseña: <input type="password" name="Contrasena" required><br><br>
                 Id tipo de cargo: <input type="text" name="Id_cargo" required><br><br>
                 <input type="submit" value="Agregar">
             </form>
